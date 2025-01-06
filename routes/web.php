@@ -43,3 +43,7 @@ Route::get('/admin/manajement-category', function () {
 Route::get('/admin/manajement-category/create', function () {
     return view('admin.manjement-category.create');
 })->name('admin.manajement-category.create');
+
+Route::get('/admin/manajement-category/edit', function () {
+    return view('admin.manjement-category.edit');
+})->name('admin.manajement-category.edit');

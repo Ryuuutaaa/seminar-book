@@ -23,7 +23,8 @@
                     <td>1</td>
                     <td>Musik</td>
                     <td>
-                        <a href="#" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i> Edit</a>
+                        <a href="{{ route('admin.manajement-category.edit') }}" class="btn btn-warning btn-sm"><i
+                                class="bi bi-pencil"></i> Edit</a>
                         <a href="#" class="btn btn-danger btn-sm"
                             onclick="if(confirm('Apakah kamu yakin ingin menghapusnya?')){ /* aksi hapus */ }"><i
                                 class="bi bi-trash"></i> Hapus</a>
@@ -33,7 +34,8 @@
                     <td>2</td>
                     <td>Teknologi</td>
                     <td>
-                        <a href="#" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i> Edit</a>
+                        <a href="{{ route('admin.manajement-category.edit') }}" class="btn btn-warning btn-sm"><i
+                                class="bi bi-pencil"></i> Edit</a>
                         <a href="#" class="btn btn-danger btn-sm"
                             onclick="if(confirm('Apakah kamu yakin ingin menghapusnya?')){ /* aksi hapus */ }"><i
                                 class="bi bi-trash"></i> Hapus</a>
@@ -43,7 +45,8 @@
                     <td>3</td>
                     <td>Workshop</td>
                     <td>
-                        <a href="#" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i> Edit</a>
+                        <a href="{{ route('admin.manajement-category.edit') }}" class="btn btn-warning btn-sm"><i
+                                class="bi bi-pencil"></i> Edit</a>
                         <a href="#" class="btn btn-danger btn-sm"
                             onclick="if(confirm('Apakah kamu yakin ingin menghapusnya?')){ /* aksi hapus */ }"><i
                                 class="bi bi-trash"></i> Hapus</a>
