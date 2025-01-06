@@ -31,7 +31,7 @@
                     <td>19-09-8</td>
                     <td>500</td>
                     <td>
-                        <a href="{{ route('admin.manajement-event.edit') }}" class="btn btn-primary btn-sm"><i
+                        <a href="{{ route('admin.manajement-event.edit') }}" class="btn btn-warning btn-sm"><i
                                 class="bi bi-pencil"></i> Edit</a>
                         <a href="#" class="btn btn-danger btn-sm"
                             onclick="if(confirm('Apakah kamu yakin ingin menghapusnya?')){ /* aksi hapus */ }"><i
@@ -47,7 +47,7 @@
                     <td>19-09-8</td>
                     <td>200</td>
                     <td>
-                        <a href="{{ route('admin.manajement-event.edit') }}" class="btn btn-primary btn-sm"><i
+                        <a href="{{ route('admin.manajement-event.edit') }}" class="btn btn-warning btn-sm"><i
                                 class="bi bi-pencil"></i> Edit</a>
                         <a href="#" class="btn btn-danger btn-sm"
                             onclick="if(confirm('Apakah kamu yakin ingin menghapusnya?')){ /* aksi hapus */ }"><i
@@ -63,7 +63,7 @@
                     <td>19-09-8</td>
                     <td>300</td>
                     <td>
-                        <a href="{{ route('admin.manajement-event.edit') }}" class="btn btn-primary btn-sm"><i
+                        <a href="{{ route('admin.manajement-event.edit') }}" class="btn btn-warning btn-sm"><i
                                 class="bi bi-pencil"></i> Edit</a>
                         <a href="#" class="btn btn-danger btn-sm"
                             onclick="if(confirm('Apakah kamu yakin ingin menghapusnya?')){ /* aksi hapus */ }"><i
