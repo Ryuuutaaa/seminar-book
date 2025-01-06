@@ -5,10 +5,10 @@
 @section('content')
     <div class="container mt-3">
         <h2 class="mb-4">Daftar Event</h2>
-        <button class="btn btn-primary my-3 p-2">
+        <a class="btn btn-primary my-3 p-2" href="{{ route('admin.manajement-event.create') }}">
             <i class="bi bi-plus-lg"></i>
             Create new event
-        </button>
+        </a>
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
                 <tr>
