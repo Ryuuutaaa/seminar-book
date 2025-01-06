@@ -26,9 +26,14 @@ Route::get('/admin/manajement-event', function () {
     return view('admin.manajement-event.index');
 })->name('admin.manajement-event.root');
 
+// manajement edit admin
 Route::get('/admin/manajement-event/create', function () {
     return view('admin.manajement-event.create');
 })->name('admin.manajement-event.create');
+
+Route::get('/admin/manajement-event/edit', function () {
+    return view('admin.manajement-event.edit');
+})->name('admin.manajement-event.edit');
 
 // manajement categorty event admin
 Route::get('/admin/manajement-category', function () {
