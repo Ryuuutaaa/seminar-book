@@ -14,6 +14,12 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
 
+
+// admin root
 Route::get('/admin/dashboard', function () {
     return view('admin.index');
 })->name('admin.root');
+
+Route::get('/admin/manajement-event', function () {
+    return view('admin.manajement-event.index');
+})->name('admin.manajement-event');

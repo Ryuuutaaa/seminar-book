@@ -32,17 +32,26 @@
 <body>
     <div class="d-flex">
         <!-- Sidebar -->
-        <div id="sidebar-wrapper" class="bg-dark text-white p-3" style="min-width: 250px;">
+        <div id="sidebar-wrapper" class="text-white p-3" style="min-width: 250px; background: palevioletred">
             <h3 class="text-center py-3 border-bottom">Admin Panel</h3>
             <ul class="nav flex-column mt-4">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Dashboard</a>
+                    <a class="nav-link text-white fw-bold my-2" href="{{ route('admin.root') }}">
+                        <i class="bi bi-house-door-fill"></i>
+                        Dashboard
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Manajement event</a>
+                    <a class="nav-link text-white fw-bold my-2" href="{{ route('admin.manajement-event') }}">
+                        <i class="bi bi-calendar-event-fill"></i>
+                        Manajement event
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Manajemen Peserta Event</a>
+                    <a class="nav-link text-white fw-bold my-2" href="#">
+                        <i class="bi bi-people-fill"></i>
+                        Manajemen Peserta Event
+                    </a>
                 </li>
             </ul>
         </div>
@@ -52,12 +61,11 @@
             <!-- Top Bar -->
             <nav class="navbar navbar-expand navbar-light bg-light shadow-sm">
                 <div class="container">
-                    <span class="navbar-brand">Admin Dashboard</span>
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-person-circle" alt="Admin Profile" class="rounded-circle"></i>
+                                <i class="bi bi-person-circle" alt="Admin Profile"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                                 <li><a class="dropdown-item" href="#">Logout</a></li>
@@ -66,28 +74,6 @@
                     </ul>
                 </div>
             </nav>
-
-            <!-- Header Cards -->
-            <header class="container mt-4">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card text-white bg-primary mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Total Event</h5>
-                                <p class="card-text fs-4">10</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card text-white bg-success mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Total Peserta</h5>
-                                <p class="card-text fs-4">90</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
 
             <!-- Main Dashboard Content -->
             <main class="container my-4">
