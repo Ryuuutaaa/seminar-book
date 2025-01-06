@@ -48,6 +48,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link text-white fw-bold my-2" href="{{ route('admin.manajement-event') }}">
+                        <i class="bi bi-archive-fill"></i>
+                        Manajement Category Event
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link text-white fw-bold my-2" href="#">
                         <i class="bi bi-people-fill"></i>
                         Manajemen Peserta Event
