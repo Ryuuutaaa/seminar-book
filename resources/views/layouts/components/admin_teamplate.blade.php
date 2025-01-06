@@ -54,7 +54,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white fw-bold my-2" href="#">
+                    <a class="nav-link text-white fw-bold my-2" href="{{ route('admin.manajement-peserta.root') }}">
                         <i class="bi bi-people-fill"></i>
                         Manajemen Peserta Event
                     </a>

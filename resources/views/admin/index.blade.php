@@ -5,6 +5,7 @@
 @section('content') <!-- Header Cards -->
     <header class="container mt-4">
         <div class="row">
+            <h2 class="mb-4">Dashboard event</h2>
             <div class="col-md-6">
                 <div class="card text-white bg-primary mb-3">
                     <div class="card-body">

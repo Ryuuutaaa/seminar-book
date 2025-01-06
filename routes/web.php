@@ -47,3 +47,8 @@ Route::get('/admin/manajement-category/create', function () {
 Route::get('/admin/manajement-category/edit', function () {
     return view('admin.manjement-category.edit');
 })->name('admin.manajement-category.edit');
+
+// manajement peserta admin
+Route::get('/admin/manajement-peserta/', function () {
+    return view('admin.manajement-peserta.index');
+})->name('admin.manajement-peserta.root');
