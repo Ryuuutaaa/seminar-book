@@ -42,13 +42,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white fw-bold my-2" href="{{ route('admin.manajement-event') }}">
+                    <a class="nav-link text-white fw-bold my-2" href="{{ route('admin.manajement-event.root') }}">
                         <i class="bi bi-calendar-event-fill"></i>
                         Manajement event
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white fw-bold my-2" href="{{ route('admin.manajement-event') }}">
+                    <a class="nav-link text-white fw-bold my-2" href="{{ route('admin.manajement-category.root') }}">
                         <i class="bi bi-archive-fill"></i>
                         Manajement Category Event
                     </a>
