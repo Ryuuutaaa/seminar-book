@@ -4,7 +4,10 @@
 
 @section('content') <!-- Header Cards -->
     <div class="container mt-3">
-        <h2 class="mb-4">Daftar Kategori</h2>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="mb-4">Daftar Kategori</h2>
+            <p class="text-secondary fw-semibold">dashboard > Manajement Kategori</p>
+        </div>
         <a class="btn btn-primary my-3 p-2" href="{{ route('admin.manajement-category.create') }}">
             <i class="bi bi-plus-lg"></i>
             Tambah Categori

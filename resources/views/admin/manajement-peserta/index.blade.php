@@ -4,7 +4,10 @@
 
 @section('content') <!-- Header Cards -->
     <div class="container mt-3">
-        <h2 class="mb-4">Daftar Peserta</h2>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="mb-4">Daftar Peserta Event</h2>
+            <p class="text-secondary fw-semibold">dashboard > Manajement Perserta Event</p>
+        </div>
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
                 <tr>
