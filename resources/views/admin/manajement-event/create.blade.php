@@ -38,6 +38,13 @@
                     <input type="date" class="form-control" id="eventDate" required>
                 </div>
 
+                <!-- kapasiti -->
+                <div class="mb-3">
+                    <label for="eventKapasitas" class="form-label fw-bold">Kapasitas</label>
+                    <input type="number" class="form-control" id="eventDate" placeholder="masukan kapasitas event"
+                        required>
+                </div>
+
                 <!-- Poster Event -->
                 <div class="mb-3">
                     <label for="eventPoster" class="form-label fw-bold">Poster Event</label>

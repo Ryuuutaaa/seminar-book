@@ -10,13 +10,13 @@
                 @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
-                        required>
+                    <input type="email" class="form-control" id="email" name="email"
+                        placeholder="Masukan Email kammu" required>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password"
-                        placeholder="Enter your password" required>
+                        placeholder="Masukan password kamu" required>
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="form-check">
@@ -29,7 +29,7 @@
                     <button type="submit" class="btn btn-primary w-100">Login</button>
                 </div>
             </form>
-            <p class="text-center mt-3">Don't have an account? <a href="{{ route('register') }}">Register</a></p>
+            <p class="text-center mt-3">Belum punya akun? <a href="{{ route('register') }}">Register</a></p>
         </div>
     </div>
 @endsection
