@@ -4,20 +4,31 @@
 
 @section('content')
     <div class="container mt-3">
-        <h2 class="mb-4">Daftar Event</h2>
-        <a class="btn btn-primary my-3 p-2" href="{{ route('admin.manajement-event.create') }}">
-            <i class="bi bi-plus-lg"></i>
-            Create new event
-        </a>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="mb-4">Daftar Event</h2>
+            <p class="text-secondary fw-semibold">dashboard > Manajement Event</p>
+        </div>
+        <div class="d-flex justify-content-between">
+            <a class="btn btn-primary my-3 p-2" href="{{ route('admin.manajement-event.create') }}">
+                <i class="bi bi-plus-lg"></i>
+                Tambah event
+            </a>
+            <a class="btn btn-danger my-3 p-2" href="{{ route('admin.manajement-event.create') }}">
+                <i class="bi bi-file-earmark-fill"></i>
+                Cetak laporan
+            </a>
+        </div>
+
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
                 <tr>
                     <th>No</th>
                     <th>Nama Event</th>
-                    <th>Categori</th>
+                    <th>Kategori</th>
                     <th>Narasumber</th>
                     <th>Tanggal</th>
                     <th>Total Kapasitas</th>
+                    <th>Harga</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -30,6 +41,8 @@
                     <td>Ir bydi tykin</td>
                     <td>19-09-8</td>
                     <td>500</td>
+                    <td>500</td>
+
                     <td>
                         <a href="{{ route('admin.manajement-event.edit') }}" class="btn btn-warning btn-sm"><i
                                 class="bi bi-pencil"></i> Edit</a>
@@ -46,6 +59,8 @@
                     <td>Ir bydi tykin</td>
                     <td>19-09-8</td>
                     <td>200</td>
+                    <td>500</td>
+
                     <td>
                         <a href="{{ route('admin.manajement-event.edit') }}" class="btn btn-warning btn-sm"><i
                                 class="bi bi-pencil"></i> Edit</a>
@@ -62,6 +77,8 @@
                     <td>Ir bydi tykin</td>
                     <td>19-09-8</td>
                     <td>300</td>
+                    <td>500</td>
+
                     <td>
                         <a href="{{ route('admin.manajement-event.edit') }}" class="btn btn-warning btn-sm"><i
                                 class="bi bi-pencil"></i> Edit</a>

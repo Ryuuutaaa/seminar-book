@@ -7,7 +7,7 @@
         <h2 class="mb-4">Daftar Kategori</h2>
         <a class="btn btn-primary my-3 p-2" href="{{ route('admin.manajement-category.create') }}">
             <i class="bi bi-plus-lg"></i>
-            Create new Category
+            Tambah Categori
         </a>
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
