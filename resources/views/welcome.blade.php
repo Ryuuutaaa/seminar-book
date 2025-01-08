@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.components.admin_teamplate')
+
+@section('title', 'Admin Dashboard')
 
 @section('title', 'Home Page')
 

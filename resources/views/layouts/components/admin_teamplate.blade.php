@@ -40,71 +40,110 @@
 <body>
     <div class="d-flex">
         <!-- Sidebar -->
-        <div id="sidebar-wrapper" class="text-white p-4"
-            style="min-width: 250px; background: #9b4d96; box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);">
-            <h3 class="text-center py-3 border-bottom" style="font-weight: bold;">Admin</h3>
-            <ul class="nav flex-column mt-4">
-                <!-- Dashboard -->
-                <li class="nav-item">
-                    <a class="nav-link text-white fw-bold my-2 d-flex align-items-center"
-                        href="{{ route('admin.root') }}" style="transition: background-color 0.3s;">
-                        <i class="bi bi-house-door-fill me-2" style="font-size: 1.25rem;"></i>
-                        Dashboard
-                    </a>
-                </li>
-                <!-- Manajement Event -->
-                <li class="nav-item">
-                    <a class="nav-link text-white fw-bold my-2 d-flex align-items-center"
-                        href="{{ route('admin.manajement-event.root') }}" style="transition: background-color 0.3s;">
-                        <i class="bi bi-calendar-event-fill me-2" style="font-size: 1.25rem;"></i>
-                        Manajement Event
-                    </a>
-                </li>
+        @guest
+        @else
+            <div id="sidebar-wrapper" class="text-white p-4"
+                style="min-width: 250px; background: #9b4d96; box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);">
+                <h3 class="text-center py-3 border-bottom" style="font-weight: bold;">Admin</h3>
+                <ul class="nav flex-column mt-4">
+                    <!-- Dashboard -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold my-2 d-flex align-items-center"
+                            href="{{ route('admin.root') }}" style="transition: background-color 0.3s;">
+                            <i class="bi bi-house-door-fill me-2" style="font-size: 1.25rem;"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <!-- Manajement Event -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold my-2 d-flex align-items-center"
+                            href="{{ route('admin.manajement-event.root') }}" style="transition: background-color 0.3s;">
+                            <i class="bi bi-calendar-event-fill me-2" style="font-size: 1.25rem;"></i>
+                            Manajement Event
+                        </a>
+                    </li>
 
-                <!-- Validasi tiket peserta -->
-                <li class="nav-item">
-                    <a class="nav-link text-white fw-bold my-2 d-flex align-items-center"
-                        href="{{ route('admin.manajement-event.root') }}" style="transition: background-color 0.3s;">
-                        <i class="bi bi-ticket-fill me-2" style="font-size: 1.25rem;"></i>
-                        Validasi tiket
-                    </a>
-                </li>
+                    <!-- Validasi tiket peserta -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold my-2 d-flex align-items-center"
+                            href="{{ route('admin.manajement-event.root') }}" style="transition: background-color 0.3s;">
+                            <i class="bi bi-ticket-fill me-2" style="font-size: 1.25rem;"></i>
+                            Validasi tiket
+                        </a>
+                    </li>
 
-                <!-- Manajement Category Event -->
-                <li class="nav-item">
-                    <a class="nav-link text-white fw-bold my-2 d-flex align-items-center"
-                        href="{{ route('admin.manajement-category.root') }}" style="transition: background-color 0.3s;">
-                        <i class="bi bi-archive-fill me-2" style="font-size: 1.25rem;"></i>
-                        Manajement Category Event
-                    </a>
-                </li>
-                <!-- Manajement Peserta Event -->
-                <li class="nav-item">
-                    <a class="nav-link text-white fw-bold my-2 d-flex align-items-center"
-                        href="{{ route('admin.manajement-peserta.root') }}" style="transition: background-color 0.3s;">
-                        <i class="bi bi-people-fill me-2" style="font-size: 1.25rem;"></i>
-                        Manajement Peserta Event
-                    </a>
-                </li>
-            </ul>
-        </div>
+                    <!-- Manajement Category Event -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold my-2 d-flex align-items-center"
+                            href="{{ route('admin.manajement-category.root') }}" style="transition: background-color 0.3s;">
+                            <i class="bi bi-archive-fill me-2" style="font-size: 1.25rem;"></i>
+                            Manajement Category Event
+                        </a>
+                    </li>
+                    <!-- Manajement Peserta Event -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold my-2 d-flex align-items-center"
+                            href="{{ route('admin.manajement-peserta.root') }}" style="transition: background-color 0.3s;">
+                            <i class="bi bi-people-fill me-2" style="font-size: 1.25rem;"></i>
+                            Manajement Peserta Event
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        @endguest
+
         <div id="content-wrapper" class="d-flex flex-column w-100">
             <!-- Top Bar -->
-            <nav class="navbar navbar-expand navbar-light bg-light shadow-sm">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-person-circle" alt="Admin Profile" style="font-size: 30px;"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <!-- Logo -->
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        <img src="{{ asset('path/to/logo.png') }}" alt="Logo" width="30" height="30">
+                        MyWebsite
+                    </a>
+                    <!-- Toggler for mobile view -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Links -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            @guest
+                                <!-- Show Login and Register if not logged in -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                </li>
+                            @else
+                                <!-- Show user menu if logged in -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{ Auth::user()->name }}
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="{{ route('profile') }}">Profile</a></li>
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                Logout
+                                            </a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                class="d-none">
+                                                @csrf
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </li>
+                            @endguest
+                        </ul>
+                    </div>
                 </div>
             </nav>
+
 
             <!-- Main Dashboard Content -->
             <main class="container my-4">
