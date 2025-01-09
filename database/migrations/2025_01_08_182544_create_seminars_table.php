@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('narasumber');
             $table->text('deskripsi');
             $table->integer('jumlah_kursi');
+            $table->string("image");
             $table->timestamps();
         });
     }
