@@ -12,6 +12,12 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        User::create([
+            'name' => 'admin',
+            'email' => "admin@gmail.com",
+            'password' => Hash::make('password'),
+            'role_id' => 'Seminar tentang perkembangan teknologi terbaru.',
+
+        ]);
     }
 }
