@@ -11,10 +11,4 @@ class Seminar extends Model
 
     // Tentukan kolom yang bisa diisi
     protected $fillable = ['nama_seminar', 'id_category', 'narasumber', 'deskripsi', 'jumlah_kursi'];
-
-    // Relasi dengan tabel category
-    public function category()
-    {
-        return $this->belongsTo(Category::class, 'id_category');
-    }
 }
