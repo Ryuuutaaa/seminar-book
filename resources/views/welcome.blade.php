@@ -2,7 +2,7 @@
 
 @section('title', 'Admin Dashboard')
 
-@section('title', 'Home Page')
+@section('title', 'Dashboard Page')
 
 @section('content')
     <div class="text-center">
