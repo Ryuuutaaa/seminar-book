@@ -11,8 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('', function (Blueprint $table) {
-            $table->foreignId('kategori_id')->after('created_by')->references('id')->on('kategori');
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignId('role_id')->after('password')->references('id')->on('role');
+        });
+
+        Schema::table('seminars', function (Blueprint $table) {
+            $table->foreignId('kategori_id')->after('nama_seminar')->references('id')->on('categories');
+        });
+
+        Schema::table('transaction', function (Blueprint $table) {
+            $table->foreignId('user_id')->after('id')->references('id')->on('users');
+            $table->foreignId('seminar_id')->after('user_id')->references('id')->on('seminars');
         });
     }
 
