@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                        <div class="text-2xl font-bold text-blue-600">SeminarHub</div>
                     </a>
                 </div>
 
@@ -23,7 +23,7 @@
                             {{ __('Tabel Kategori') }}
                         </x-nav-link>
 
-                        <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.seminar.index')">
+                        <x-nav-link :href="route('admin.seminar.index')" :active="request()->routeIs('admin.seminar.index')">
                             {{ __('Tabel Seminar') }}
                         </x-nav-link>
 
