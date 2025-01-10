@@ -61,8 +61,9 @@ class SeminarController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Seminar $seminar)
+    public function edit(string $id)
     {
+        $seminar = Seminar::find($id);
         $categories = Category::all();
         return view('admin.seminar.edit', compact('seminar', 'categories'));
     }
@@ -70,8 +71,11 @@ class SeminarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Seminar $seminar)
+    public function update(Request $request, string $id)
     {
+        $seminar = Seminar::findOrFail($id); // Cari seminar berdasarkan ID
+
+        // Validasi input dari request
         $validated = $request->validate([
             'nama_seminar' => 'required|string|max:255',
             'narasumber' => 'required|string|max:255',
@@ -81,19 +85,20 @@ class SeminarController extends Controller
             'kategori_id' => 'required|exists:categories,id',
         ]);
 
+        // Jika ada file baru pada image
         if ($request->hasFile('image')) {
-            // Delete old image if exists
             if ($seminar->image) {
-                Storage::delete($seminar->image);
+                Storage::disk('public')->delete($seminar->image);
             }
-
-            $validated['image'] = $request->file('image')->store('seminars');
+            $validated['image'] = $request->file('image')->store('seminars', 'public');
         }
 
-        $seminar->update($validated);
+        $seminar->update($validated); // Update data seminar
 
-        return redirect()->route('seminars.index')->with('success', 'Seminar berhasil diperbarui!');
+        return redirect()->route('admin.seminar.index')->with('success', 'Seminar berhasil diperbarui!');
     }
+
+
 
     /**
      * Remove the specified resource from storage.
