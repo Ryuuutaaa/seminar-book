@@ -17,6 +17,17 @@ Route::middleware(['auth'])->group(function () {
     // Admin route
     Route::get('/admin/dashboard', [DashboardController::class, 'indexAdmin'])->name('admin.index');
     Route::get("/admin/kategori", [KategoriController::class, 'index'])->name("admin.kategori.index");
+    Route::get("/admin/kategori/create", [KategoriController::class, 'create'])->name("admin.kategori.create");
+    Route::post("/admin/kategori/store", [KategoriController::class, 'store'])->name("admin.kategori.store");
+    Route::get("/admin/kategori/{id}/edit", [KategoriController::class, 'edit'])->name("admin.kategori.edit");
+    Route::put("/admin/kategori/{id}/update", [KategoriController::class, 'update'])->name("admin.kategori.update");
+    Route::delete("/admin/kategori/{id}/destroy", [KategoriController::class, 'destroy'])->name("admin.kategori.destroy");
+
+
+
+
+
+
 
     // Peserta route
     Route::get('/peserta/dashboard', [DashboardController::class, 'indexPeserta'])->name('peserta.index');

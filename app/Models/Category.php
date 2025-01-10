@@ -10,5 +10,5 @@ class Category extends Model
     use HasFactory;
 
     // Tentukan kolom yang bisa diisi
-    protected $fillable = ['nama_category'];
+    protected $fillable = ['kategori'];
 }
