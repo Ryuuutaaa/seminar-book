@@ -5,10 +5,8 @@
         </h2>
     </x-slot>
 
-
-
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-10">
-        <a href="{{ route('admin.kategori.create') }}">
+        <a href="{{ route('admin.seminar.create') }}">
             <button type="button"
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Tambah
                 Seminar</button>
@@ -30,21 +28,46 @@
                         Narasumber
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Deskripsi
-                    </th>
-                    <th scope="col" class="px-6 py-3">
                         Jumlah Kursi
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        <span class="sr-only">Edit</span>
+                        Aksi
                     </th>
-
                 </tr>
             </thead>
             <tbody>
-
+                @foreach ($seminars as $seminar)
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <td class="px-6 py-4">
+                            <img src="{{ Storage::url($seminar->image) }}" alt="{{ $seminar->nama_seminar }}"
+                                class="w-16 h-16 object-cover">
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $seminar->nama_seminar }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $seminar->category->kategori ?? 'Tidak ada kategori' }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $seminar->narasumber }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $seminar->jumlah_kursi }}
+                        </td>
+                        <td class="px-6 py-4">
+                            <a href="{{ route('admin.seminar.edit', $seminar->id) }}"
+                                class="text-blue-600 hover:underline dark:text-blue-500">Edit</a> |
+                            <form action="{{ route('admin.seminar.destroy', $seminar->id) }}" method="POST"
+                                class="inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit"
+                                    class="text-red-600 hover:underline dark:text-red-500">Hapus</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
-
 </x-app-layout>

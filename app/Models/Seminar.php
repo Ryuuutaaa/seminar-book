@@ -10,5 +10,17 @@ class Seminar extends Model
     use HasFactory;
 
     // Tentukan kolom yang bisa diisi
-    protected $fillable = ['nama_seminar', 'id_category', 'narasumber', 'deskripsi', 'jumlah_kursi'];
+    protected $fillable = [
+        'nama_seminar',
+        'narasumber',
+        'deskripsi',
+        'jumlah_kursi',
+        'image',
+        'kategori_id',
+    ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'kategori_id');
+    }
 }

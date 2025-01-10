@@ -29,6 +29,11 @@ Route::middleware(['auth'])->group(function () {
 
     // admin seminar
     Route::get("/admin/seminar", [SeminarController::class, 'index'])->name("admin.seminar.index");
+    Route::get("/admin/seminar/create", [SeminarController::class, 'create'])->name("admin.seminar.create");
+    Route::post("/admin/seminar/store", [SeminarController::class, 'store'])->name("admin.seminar.store");
+    Route::get("/admin/seminar/{id}/edit", [SeminarController::class, 'edit'])->name("admin.seminar.edit");
+    Route::put("/admin/seminar/{id}/update", [SeminarController::class, 'update'])->name("admin.seminar.update");
+    Route::delete("/admin/seminar/{id}/destroy", [SeminarController::class, 'destroy'])->name("admin.seminar.destroy");
 
 
 
