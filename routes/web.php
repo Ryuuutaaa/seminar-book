@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PesertaController;
 use Illuminate\Support\Facades\Route;
 
 // Halaman beranda
@@ -25,11 +26,9 @@ Route::middleware(['auth'])->group(function () {
     Route::put("/admin/kategori/{id}/update", [KategoriController::class, 'update'])->name("admin.kategori.update");
     Route::delete("/admin/kategori/{id}/destroy", [KategoriController::class, 'destroy'])->name("admin.kategori.destroy");
 
-    // 
-
-
-
-
+    // admin peserta
+    Route::get('/admin/peserta', [PesertaController::class, 'index'])->name('admin.peserta.index');
+    Route::put('/admin/peserta/{id}/update', [PesertaController::class, 'update'])->name('admin.peserta.update');
 
 
 
