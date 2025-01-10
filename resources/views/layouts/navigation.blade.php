@@ -27,7 +27,7 @@
                             {{ __('Tabel Seminar') }}
                         </x-nav-link>
 
-                        <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.peserta.index')">
+                        <x-nav-link :href="route('admin.peserta.index')" :active="request()->routeIs('admin.peserta.index')">
                             {{ __('Tabel Peserta') }}
                         </x-nav-link>
 

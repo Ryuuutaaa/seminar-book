@@ -8,6 +8,17 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+
+                @if (session('success'))
+                    <div class="mb-4 text-green-700 bg-green-100 border border-green-400 p-4 rounded-lg">
+                        {{ session('success') }}
+                    </div>
+                @elseif (session('error'))
+                    <div class="mb-4 text-red-700 bg-red-100 border border-red-400 p-4 rounded-lg">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <form method="POST" action="{{ route('admin.kategori.store') }}">
                         @csrf
