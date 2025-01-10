@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 
 // Halaman beranda
@@ -15,6 +16,7 @@ Route::middleware(['auth'])->group(function () {
 
     // Admin route
     Route::get('/admin/dashboard', [DashboardController::class, 'indexAdmin'])->name('admin.index');
+    Route::get("/admin/kategori", [KategoriController::class, 'index'])->name("admin.kategori.index");
 
     // Peserta route
     Route::get('/peserta/dashboard', [DashboardController::class, 'indexPeserta'])->name('peserta.index');
