@@ -85,9 +85,8 @@ class SeminarController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $seminar = Seminar::findOrFail($id); // Cari seminar berdasarkan ID
+        $seminar = Seminar::findOrFail($id);
 
-        // Validasi input dari request
         $validated = $request->validate([
             'nama_seminar' => 'required|string|max:255',
             'narasumber' => 'required|string|max:255',
@@ -97,7 +96,6 @@ class SeminarController extends Controller
             'kategori_id' => 'required|exists:categories,id',
         ]);
 
-        // Jika ada file baru pada image
         if ($request->hasFile('image')) {
             if ($seminar->image) {
                 Storage::disk('public')->delete($seminar->image);
@@ -105,7 +103,7 @@ class SeminarController extends Controller
             $validated['image'] = $request->file('image')->store('seminars', 'public');
         }
 
-        $seminar->update($validated); // Update data seminar
+        $seminar->update($validated);
 
         return redirect()->route('admin.seminar.index')->with('success', 'Seminar berhasil diperbarui!');
     }
@@ -117,18 +115,14 @@ class SeminarController extends Controller
      */
     public function destroy(string $id)
     {
-        // Ambil data seminar berdasarkan ID
         $seminar = Seminar::findOrFail($id);
 
-        // Hapus gambar dari storage jika ada
         if ($seminar->image) {
             Storage::delete($seminar->image);
         }
 
-        // Hapus data seminar
         $seminar->delete();
 
-        // Redirect dengan pesan sukses
         return redirect()->route('admin.seminar.index')->with('success', 'Seminar berhasil dihapus!');
     }
 }
