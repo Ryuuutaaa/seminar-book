@@ -42,12 +42,12 @@ class SeminarController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $validated['image'] = $request->file('image')->store('seminars');
+            $validated['image'] = $request->file('image')->store('seminars', 'public');
         }
 
         Seminar::create($validated);
 
-        return redirect()->route('seminars.index')->with('success', 'Seminar berhasil ditambahkan!');
+        return redirect()->route('admin.seminar.index')->with('success', 'Seminar berhasil ditambahkan!');
     }
 
     /**

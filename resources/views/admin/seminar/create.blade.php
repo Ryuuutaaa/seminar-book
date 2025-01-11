@@ -25,8 +25,8 @@
                         </label>
                         <select name="kategori_id" id="kategori_id"
                             class="block w-full mt-1 border-gray-300 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <option hidden>Pilih kategori</option>
                             @foreach ($categories as $category)
-                                <option hidden>Pilih kategori</option>
                                 <option value="{{ $category->id }}">{{ $category->kategori }}</option>
                             @endforeach
                         </select>
