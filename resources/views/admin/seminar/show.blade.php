@@ -47,7 +47,7 @@
                     </a>
                     <div>
                         <a href="{{ route('admin.seminar.edit', $seminar->id) }}"
-                            class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:ring focus:ring-blue-300">
+                            class="mr-3 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:ring focus:ring-blue-300">
                             Edit
                         </a>
                         <form action="{{ route('admin.seminar.destroy', $seminar->id) }}" method="POST"
