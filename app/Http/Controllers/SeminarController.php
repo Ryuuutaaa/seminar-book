@@ -62,10 +62,13 @@ class SeminarController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Seminar $seminar)
+    public function show(string $id)
     {
+        $seminar = Seminar::findOrFail($id);
+
         return view('admin.seminar.show', compact('seminar'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
