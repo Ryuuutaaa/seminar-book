@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Seminar;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -32,8 +33,13 @@ class DashboardController extends Controller
             return abort(403, 'Unauthorized access.');
         }
 
-        return view('admin.index');
+        // Ambil semua seminar dengan relasi kategori
+        $seminars = Seminar::with('category')->get();
+
+        // Kirim data seminars ke view
+        return view('admin.index', compact("seminars"));
     }
+
 
     public function indexPeserta()
     {
