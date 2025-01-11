@@ -42,8 +42,17 @@ class SeminarController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $validated['image'] = $request->file('image')->store('seminars', 'public');
+            $namaSeminar = $request->input('nama_seminar');
+
+            $cleanedName = preg_replace('/[^A-Za-z0-9\-]/', '_', $namaSeminar);
+
+            $extension = $request->file('image')->getClientOriginalExtension();
+
+            $fileName = $cleanedName . '.' . $extension;
+
+            $validated['image'] = $request->file('image')->storeAs('seminars', $fileName, 'public');
         }
+
 
         Seminar::create($validated);
 
