@@ -115,14 +115,20 @@ class SeminarController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Seminar $seminar)
+    public function destroy(string $id)
     {
+        // Ambil data seminar berdasarkan ID
+        $seminar = Seminar::findOrFail($id);
+
+        // Hapus gambar dari storage jika ada
         if ($seminar->image) {
             Storage::delete($seminar->image);
         }
 
+        // Hapus data seminar
         $seminar->delete();
 
-        return redirect()->route('seminars.index')->with('success', 'Seminar berhasil dihapus!');
+        // Redirect dengan pesan sukses
+        return redirect()->route('admin.seminar.index')->with('success', 'Seminar berhasil dihapus!');
     }
 }
