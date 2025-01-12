@@ -42,6 +42,9 @@
                         Jumlah Kursi
                     </th>
                     <th scope="col" class="px-6 py-3">
+                        Tanggal seminar
+                    </th>
+                    <th scope="col" class="px-6 py-3">
                         Aksi
                     </th>
                 </tr>
@@ -64,6 +67,9 @@
                         </td>
                         <td class="px-6 py-4">
                             {{ $seminar->jumlah_kursi }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $seminar->tanggal_seminar }}
                         </td>
                         <td class="px-6 py-4">
                             <!-- Tombol Show -->

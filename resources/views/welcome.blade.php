@@ -45,6 +45,10 @@
                             <p class="text-gray-600 mb-4">{{ $seminar->deskripsi }}</p>
                             <p class="text-gray-800 font-semibold mb-2">Narasumber : {{ $seminar->narasumber }}</p>
                             <p class="text-gray-800 font-semibold mb-4">Jumlah Kuris: {{ $seminar->jumlah_kursi }}</p>
+                            <p class="text-gray-800 font-semibold mb-4">Tanggal seminar: <span
+                                    class="font-bold">{{ $seminar->tanggal_seminar }}</span>
+                            </p>
+
                             {{-- <a href="{{ route('seminars.show', $seminar->id) }}"
                                 class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">View Details</a> --}}
                         </div>
