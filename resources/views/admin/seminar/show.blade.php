@@ -7,15 +7,12 @@
 
     <div class="p-12">
         <div class="max-w-4xl mx-auto">
-            <!-- Card Container -->
             <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-                <!-- Gambar Seminar -->
                 <div class="relative">
                     <img src="{{ Storage::url($seminar->image) }}" alt="{{ $seminar->nama_seminar }}"
                         class="w-full min-h-96">
                 </div>
 
-                <!-- Konten Seminar -->
                 <div class="p-6">
                     <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-200">
                         {{ $seminar->nama_seminar }}
@@ -38,7 +35,6 @@
                     </p>
                 </div>
 
-                <!-- Aksi -->
                 <div
                     class="p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 flex justify-between">
                     <a href="{{ route('admin.seminar.index') }}"
