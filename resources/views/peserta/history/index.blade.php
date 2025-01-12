@@ -54,8 +54,8 @@
                                     <span
                                         class="px-4 py-2 text-sm font-semibold rounded-full 
                                         @if ($transaction->status == 'pending') bg-orange-500 text-white
-                                        @elseif($transaction->status == 'success') bg-green-500 text-white
-                                        @elseif($transaction->status == 'failed') bg-red-500 text-white 
+                                        @elseif($transaction->status == 'berhasil') bg-green-500 text-white
+                                        @elseif($transaction->status == 'gagal') bg-red-500 text-white 
                                         @else bg-gray-500 text-white @endif">
                                         {{ ucfirst($transaction->status) }}
                                     </span>
