@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\SeminarController;
 use App\Http\Controllers\PesertaController;
@@ -46,6 +47,7 @@ Route::middleware(['auth'])->group(function () {
 
     // Peserta route
     Route::get('/peserta/dashboard', [DashboardController::class, 'indexPeserta'])->name('peserta.index');
+    Route::get("/peserta/history", [HistoryController::class, 'index'])->name("peserta.history.index");
 
 
     // Profile route
