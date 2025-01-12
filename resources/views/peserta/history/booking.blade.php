@@ -17,10 +17,22 @@
                     </div>
                     <!-- Seminar info on the right -->
                     <div class="w-2/3 p-6">
-                        <h3 class="text-2xl font-bold text-white">{{ $seminar->nama_seminar }}</h3>
-                        <p class="text-sm text-white mt-2">By: {{ $seminar->narasumber }}</p>
-                        <p class="text-sm text-white mt-2"><strong>Date:</strong>
-                            {{ \Carbon\Carbon::parse($seminar->tanggal)->format('d M Y') }}</p>
+                        <h3 class="text-3xl font-bold text-white">{{ $seminar->nama_seminar }}</h3>
+                        <h4 class="text-xl text-white mt-2">By: {{ $seminar->narasumber }}</h4>
+                        <h4 class="text-xl text-white mt-2">Jumlah kursi yang tersedia : {{ $seminar->jumlah_kursi }}
+                        </h4>
+                        <h4 class="text-xl text-white mt-2"><strong>Date:</strong>
+                            {{ \Carbon\Carbon::parse($seminar->tanggal)->format('d M Y') }}</h4>
+
+                        <div class="mt-4">
+                            <label for="booking_kursi"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                                Jumlah kursi yang ingin di booking
+                            </label>
+                            <input type="number" name="booking_kursi" id="booking_kursi"
+                                class="block w-full mt-1 border-gray-300 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                                required>
+                        </div>
 
                         <div class="mt-80 flex justify-end ">
                             <a href="#">
