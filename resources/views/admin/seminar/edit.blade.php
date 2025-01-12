@@ -10,7 +10,6 @@
             @csrf
             @method('PUT')
 
-            <!-- Nama Seminar -->
             <div class="mb-4">
                 <label for="nama_seminar" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
                     Nama Seminar
@@ -20,7 +19,6 @@
                     required>
             </div>
 
-            <!-- Kategori -->
             <div class="mb-4">
                 <label for="kategori_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
                     Kategori
@@ -36,7 +34,6 @@
                 </select>
             </div>
 
-            <!-- Narasumber -->
             <div class="mb-4">
                 <label for="narasumber" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
                     Narasumber
@@ -46,7 +43,6 @@
                     required>
             </div>
 
-            <!-- Deskripsi -->
             <div class="mb-4">
                 <label for="deskripsi" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
                     Deskripsi
@@ -55,7 +51,6 @@
                     class="block w-full mt-1 border-gray-300 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">{{ $seminar->deskripsi }}</textarea>
             </div>
 
-            <!-- Jumlah Kursi -->
             <div class="mb-4">
                 <label for="jumlah_kursi" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
                     Jumlah Kursi
@@ -65,7 +60,6 @@
                     required>
             </div>
 
-            <!-- Tanggal seminar -->
             <div class="mb-4">
                 <label for="tanggal_seminar" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
                     Tanggal seminar
@@ -77,7 +71,6 @@
             </div>
 
 
-            <!-- Gambar -->
             <div class="mb-4">
                 <label for="image" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
                     Gambar
@@ -90,7 +83,6 @@
                 @endif
             </div>
 
-            <!-- Tombol Submit -->
             <div class="mt-6">
                 <button type="submit"
                     class="px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300">
