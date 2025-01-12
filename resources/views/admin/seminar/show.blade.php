@@ -12,7 +12,7 @@
                 <!-- Gambar Seminar -->
                 <div class="relative">
                     <img src="{{ Storage::url($seminar->image) }}" alt="{{ $seminar->nama_seminar }}"
-                        class="w-full h-64 object-cover">
+                        class="w-full min-h-96">
                 </div>
 
                 <!-- Konten Seminar -->
