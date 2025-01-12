@@ -14,7 +14,7 @@
                         <div
                             class="bg-gray-800 shadow-md rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:cursor-pointer">
                             <img src="{{ Storage::url($seminar->image) }}" alt="{{ $seminar->nama_seminar }}"
-                                class="w-full h-75 object-cover">
+                                class="w-full h-80 object-cover">
                             <div class="p-4">
                                 <h3 class="text-lg font-bold mb-2 text-white">{{ $seminar->nama_seminar }}</h3>
                                 <p class="text-sm text-white mb-2">By: {{ $seminar->narasumber }}</p>
