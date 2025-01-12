@@ -47,6 +47,7 @@ Route::middleware(['auth'])->group(function () {
     // Peserta route
     Route::get('/peserta/dashboard', [DashboardController::class, 'indexPeserta'])->name('peserta.index');
 
+
     // Profile route
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
