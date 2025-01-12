@@ -5,12 +5,11 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\SeminarController;
 use App\Http\Controllers\PesertaController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 // Halaman beranda
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get("/", [WelcomeController::class, 'index'])->name("welcome");
 
 // Route yang memerlukan autentikasi
 Route::middleware(['auth'])->group(function () {
