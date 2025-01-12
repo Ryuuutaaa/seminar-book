@@ -39,6 +39,9 @@
                         <x-nav-link :href="route('peserta.index')" :active="request()->routeIs('peserta.index')">
                             {{ __('Dashboard') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('peserta.index')" :active="request()->routeIs('peserta.index')">
+                            {{ __('History') }}
+                        </x-nav-link>
                     @endif
                 </div>
             </div>

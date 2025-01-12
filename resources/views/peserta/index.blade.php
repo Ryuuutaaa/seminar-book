@@ -6,12 +6,32 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in! peserta yeayyy") }}
+        <section class="py-10">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-6 text-white">Upcoming Seminars</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    @forelse($seminars as $seminar)
+                        <div
+                            class="bg-white shadow-md rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+                            <img src="{{ Storage::url($seminar->image) }}" alt="{{ $seminar->nama_seminar }}"
+                                class="w-full h-75 object-cover">
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold mb-2">{{ $seminar->nama_seminar }}</h3>
+                                <p class="text-sm text-gray-600 mb-2">By: {{ $seminar->narasumber }}</p>
+                                <p class="text-sm text-gray-600 mb-2"><strong>Date:</strong>
+                                    {{ \Carbon\Carbon::parse($seminar->tanggal)->format('d M Y') }}
+                                </p>
+                                {{-- <a href="{{ route('seminar.detail', $seminar->id) }}"
+                                    class="text-blue-500 hover:text-blue-700 text-sm font-semibold">
+                                    View Details
+                                </a> --}}
+                            </div>
+                        </div>
+                    @empty
+                        <p class="text-gray-300">No seminars available at the moment.</p>
+                    @endforelse
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 </x-app-layout>

@@ -49,6 +49,8 @@ class DashboardController extends Controller
             return abort(403, 'Unauthorized access.');
         }
 
-        return view('peserta.index');
+        $seminars = Seminar::with('category')->get();
+
+        return view('peserta.index', compact("seminars"));
     }
 }
