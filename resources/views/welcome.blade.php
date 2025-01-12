@@ -35,9 +35,9 @@
     <section class="py-10">
         <div class="container mx-auto px-4">
             <h2 class="text-2xl font-bold mb-6 text-gray-800">Upcoming Seminars</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                 @forelse($seminars as $seminar)
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:scale-x-110">
+                    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:scale-110">
                         <img src="{{ Storage::url($seminar->image) }}" alt="{{ $seminar->nama_seminar }}"
                             class="w-full h-75">
                         <div class="p-4">
