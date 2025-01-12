@@ -25,8 +25,9 @@
     <!-- Hero Section -->
     <section class="bg-blue-500 text-white py-20">
         <div class="container mx-auto text-center">
-            <h1 class="text-4xl font-bold mb-4">Welcome to the Ultimate Seminar Experience</h1>
-            <p class="text-lg">Explore the best seminars tailored for your needs.</p>
+            <h1 class="text-4xl font-bold mb-4">Selamat datang</h1>
+            <p class="text-lg">Membuat generasi emas dengan seminar nasional dan internasional dengan narasumber yang
+                berpengalaman dalam bidangnya.</p>
         </div>
     </section>
 
@@ -36,7 +37,7 @@
             <h2 class="text-2xl font-bold mb-6 text-gray-800">Upcoming Seminars</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($seminars as $seminar)
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:scale-x-110">
                         <img src="{{ Storage::url($seminar->image) }}" alt="{{ $seminar->nama_seminar }}"
                             class="w-full h-75">
                         <div class="p-4">
