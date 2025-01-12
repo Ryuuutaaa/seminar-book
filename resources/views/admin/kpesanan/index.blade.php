@@ -39,7 +39,7 @@
                                     <p class="text-lg text-gray-700 dark:text-gray-300 mt-1">
                                         By: <span class="font-medium">{{ $transaction->seminar->narasumber }}</span>
                                     </p>
-                                    <p class="text-md text-gray-600= dark:text-gray-400 mt-1 font-bold">
+                                    <p class="text-md text-gray-600 dark:text-gray-400 mt-1 font-bold">
                                         User: <span class="font-medium text-white">{{ $transaction->user->name }}</span>
                                     </p>
                                     <p class="text-md text-gray-600 dark:text-gray-400 mt-1">
@@ -52,22 +52,33 @@
 
                                 <!-- Actions -->
                                 <div class="mt-4 lg:mt-0 lg:self-center">
-                                    <form action="{{ route('admin.konfrimasiPesanan.update', $transaction->id) }}"
-                                        method="POST">
-                                        @csrf
-                                        @method('PUT')
+                                    @if ($transaction->status == 'pending')
+                                        <!-- Check if status is still 'pending' -->
+                                        <form action="{{ route('admin.konfrimasiPesanan.update', $transaction->id) }}"
+                                            method="POST">
+                                            @csrf
+                                            @method('PUT')
 
-                                        <button type="submit" name="status" value="berhasil"
-                                            onclick="confirm('apakah kamu yakin ingin menerima booking ini?')"
-                                            class="px-4 py-2 text-sm font-semibold rounded-full bg-green-500 text-white hover:bg-green-600">
-                                            Terima
-                                        </button>
-                                        <button type="submit" name="status" value="gagal"
-                                            onclick="confirm('apakah kamu yakin ingin menolak booking ini?')"
-                                            class="px-4 py-2 text-sm font-semibold rounded-full bg-red-500 text-white hover:bg-red-600">
-                                            Tolak
-                                        </button>
-                                    </form>
+                                            <button type="submit" name="status" value="berhasil"
+                                                onclick="return confirm('Apakah kamu yakin ingin menerima booking ini?')"
+                                                class="px-4 py-2 text-sm font-semibold rounded-full bg-green-500 text-white hover:bg-green-600">
+                                                Terima
+                                            </button>
+                                            <button type="submit" name="status" value="gagal"
+                                                onclick="return confirm('Apakah kamu yakin ingin menolak booking ini?')"
+                                                class="px-4 py-2 text-sm font-semibold rounded-full bg-red-500 text-white hover:bg-red-600">
+                                                Tolak
+                                            </button>
+                                        </form>
+                                    @else
+                                        <!-- Display status if already confirmed or failed -->
+                                        <span
+                                            class="px-4 py-2 text-sm font-semibold rounded-full 
+                                        @if ($transaction->status == 'berhasil') bg-green-500 
+                                        @elseif($transaction->status == 'gagal') bg-red-500 @endif text-white">
+                                            {{ ucfirst($transaction->status) }}
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
                         </div>
