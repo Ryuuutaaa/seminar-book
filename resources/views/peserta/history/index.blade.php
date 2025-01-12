@@ -57,7 +57,7 @@
                                         @elseif($transaction->status == 'berhasil') bg-green-500 text-white
                                         @elseif($transaction->status == 'gagal') bg-red-500 text-white 
                                         @else bg-gray-500 text-white @endif">
-                                        {{ ucfirst($transaction->status) }}
+                                        {{ $transaction->status == 'gagal' ? 'Ditolak' : ucfirst($transaction->status) }}
                                     </span>
                                 </div>
                             </div>
