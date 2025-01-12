@@ -51,6 +51,6 @@ class HistoryController extends Controller
             'status' => 'pending',
         ]);
 
-        return redirect()->route('peserta.history.index')->with('success', 'Booking berhasil dikonfirmasi.');
+        return redirect()->route('peserta.history.index')->with('success', 'Booking berhasil, silahkan menunggu konfirmasi.');
     }
 }
