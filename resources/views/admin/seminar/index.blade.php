@@ -72,15 +72,12 @@
                             {{ $seminar->tanggal_seminar }}
                         </td>
                         <td class="px-6 py-4">
-                            <!-- Tombol Show -->
                             <a href="{{ route('admin.seminar.show', $seminar->id) }}"
                                 class="text-green-600 hover:underline dark:text-green-500">Show</a> |
 
-                            <!-- Tombol Edit -->
                             <a href="{{ route('admin.seminar.edit', $seminar->id) }}"
                                 class="text-blue-600 hover:underline dark:text-blue-500">Edit</a> |
 
-                            <!-- Tombol Hapus -->
                             <form action="{{ route('admin.seminar.destroy', $seminar->id) }}" method="POST"
                                 class="inline">
                                 @csrf
