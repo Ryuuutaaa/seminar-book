@@ -8,6 +8,17 @@
     <div class="py-12">
         <section>
             <div class="container mx-auto px-4 space-y-8">
+                @if (session('success'))
+                    <div class="bg-green-500 text-white p-4 rounded mb-4">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if (session('error'))
+                    <div class="bg-red-500 text-white p-4 rounded mb-4">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 @forelse ($transactions as $transaction)
                     <div
                         class="bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden flex flex-col lg:flex-row items-center">
