@@ -15,6 +15,7 @@ class SeminarSeeder extends Seeder
             'narasumber' => 'Dr. John Doe',
             'deskripsi' => 'Seminar tentang perkembangan teknologi terbaru.',
             'jumlah_kursi' => 100,
+            'tanggal_seminar' => 09 - 09 - 2024,
             "image" => "https://unsplash.com/photos/person-diving-on-pool-splashing-water-1qCSGzVEKKQ",
 
         ]);
@@ -25,6 +26,7 @@ class SeminarSeeder extends Seeder
             'narasumber' => 'Prof. Jane Smith',
             'deskripsi' => 'Seminar tentang pendidikan di era digital.',
             'jumlah_kursi' => 150,
+            'tanggal_seminar' => 09 - 09 - 2024,
             'image' => "https://unsplash.com/photos/person-diving-on-pool-splashing-water-1qCSGzVEKKQ",
         ]);
     }
