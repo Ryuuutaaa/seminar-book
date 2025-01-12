@@ -16,7 +16,7 @@
                     @forelse ($seminars as $seminar)
                         <div class="bg-white dark:bg-gray-900 shadow-md rounded-lg overflow-hidden">
                             <img src="{{ Storage::url($seminar->image) }}" alt="{{ $seminar->nama_seminar }}"
-                                class="w-full h-48 object-cover">
+                                class="w-full h-80">
 
                             <div class="p-4">
                                 <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-100">
