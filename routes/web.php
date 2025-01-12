@@ -46,6 +46,7 @@ Route::middleware(['auth'])->group(function () {
 
     // admin konfrimasi pesanan
     Route::get("/admin/konfirmasi-pesanan", [KonfrimasiPesananController::class, 'index'])->name("admin.konfrimasiPesanan.index");
+    Route::put('/admin/konfirmasi-pesanan/{id}', [KonfrimasiPesananController::class, 'update'])->name('admin.konfrimasiPesanan.update');
 
 
 
