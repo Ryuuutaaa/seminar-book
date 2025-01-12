@@ -48,7 +48,7 @@ Route::middleware(['auth'])->group(function () {
     // Peserta route
     Route::get('/peserta/dashboard', [DashboardController::class, 'indexPeserta'])->name('peserta.index');
     Route::get("/peserta/history", [HistoryController::class, 'index'])->name("peserta.history.index");
-    Route::get("/peserta/booking", [HistoryController::class, 'booking'])->name("peserta.history.booking");
+    Route::get("/peserta/booking/{id}", [HistoryController::class, 'booking'])->name("peserta.history.booking");
 
 
 

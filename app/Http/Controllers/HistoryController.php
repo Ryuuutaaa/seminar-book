@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Seminar;
 use Illuminate\Http\Request;
 
 class HistoryController extends Controller
@@ -11,8 +13,10 @@ class HistoryController extends Controller
         return view("peserta.history.index");
     }
 
-    public function booking()
+    public function booking(string $id)
     {
-        return view("peserta.history.booking");
+        $seminar = Seminar::find($id);
+        $categories = Category::all();
+        return view("peserta.history.booking", compact("seminar", "categories"));
     }
 }
