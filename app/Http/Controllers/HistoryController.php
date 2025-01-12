@@ -10,4 +10,9 @@ class HistoryController extends Controller
     {
         return view("peserta.history.index");
     }
+
+    public function booking()
+    {
+        return view("peserta.history.booking");
+    }
 }
