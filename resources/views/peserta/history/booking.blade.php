@@ -24,24 +24,26 @@
                         <h4 class="text-xl text-white mt-2"><strong>Date:</strong>
                             {{ \Carbon\Carbon::parse($seminar->tanggal)->format('d M Y') }}</h4>
 
-                        <div class="mt-4">
-                            <label for="booking_kursi"
-                                class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                Jumlah kursi yang ingin di booking
-                            </label>
-                            <input type="number" name="booking_kursi" id="booking_kursi"
-                                class="block w-full mt-1 border-gray-300 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                                required>
-                        </div>
+                        <form action="{{ route('peserta.history.confirmBooking', $seminar->id) }}" method="POST">
+                            @csrf
+                            <div class="mt-4">
+                                <label for="booking_kursi"
+                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    Jumlah kursi yang ingin di booking
+                                </label>
+                                <input type="number" name="booking_kursi" id="booking_kursi"
+                                    class="block w-full mt-1 border-gray-300 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                                    required min="1" max="{{ $seminar->jumlah_kursi }}">
+                            </div>
 
-                        <div class="mt-80 flex justify-end ">
-                            <a href="#">
-                                <button type="button"
+                            <div class="mt-4 flex justify-end">
+                                <button type="submit"
                                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                     Confirm Booking
                                 </button>
-                            </a>
-                        </div>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
             </div>
