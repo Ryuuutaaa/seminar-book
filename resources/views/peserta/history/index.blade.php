@@ -23,16 +23,13 @@
                 @forelse ($transactions as $transaction)
                     <div
                         class="bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden flex flex-col lg:flex-row items-center">
-                        <!-- Image on the left -->
                         <div class="w-full lg:w-64 h-56 lg:h-auto">
                             <img src="{{ Storage::url($transaction->seminar->image) }}"
                                 alt="{{ $transaction->seminar->nama_seminar }}" class="w-full h-full object-cover">
                         </div>
 
-                        <!-- Seminar info and status -->
                         <div class="w-full lg:w-2/3 p-6">
                             <div class="flex flex-col lg:flex-row lg:justify-between">
-                                <!-- Seminar details -->
                                 <div>
                                     <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
                                         {{ $transaction->seminar->nama_seminar }}
@@ -49,7 +46,6 @@
                                     </p>
                                 </div>
 
-                                <!-- Status -->
                                 <div class="mt-4 lg:mt-0 lg:self-center">
                                     <span
                                         class="px-4 py-2 text-sm font-semibold rounded-full 
