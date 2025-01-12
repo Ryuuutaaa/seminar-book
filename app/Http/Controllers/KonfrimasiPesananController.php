@@ -18,11 +18,9 @@ class KonfrimasiPesananController extends Controller
 
     public function update(Request $request, $id)
     {
-        // Mulai DB transaction
         DB::beginTransaction();
 
         try {
-            // Temukan transaksi berdasarkan ID
             $transaction = Transaction::findOrFail($id);
             $seminar = Seminar::findOrFail($transaction->seminar_id);
 
@@ -30,19 +28,15 @@ class KonfrimasiPesananController extends Controller
             $transaction->status = $request->input('status');
             $transaction->save();
 
-            // Update jumlah kursi di seminar jika status 'confirmed'
             if ($transaction->status == 'berhasil') {
-                $seminar->jumlah_kursi -= $transaction->kursi; // Mengurangi jumlah kursi
+                $seminar->jumlah_kursi -= $transaction->kursi;
                 $seminar->save();
             }
 
-            // Commit transaksi jika semuanya berhasil
             DB::commit();
 
-            // Redirect dengan pesan sukses
             return redirect()->route('admin.konfrimasiPesanan.index')->with('success', 'Transaction status updated successfully.');
         } catch (\Exception $e) {
-            // Rollback jika terjadi error
             DB::rollBack();
             return redirect()->route('admin.konfrimasiPesanan.index')->with('error', 'Something went wrong. Please try again.');
         }
