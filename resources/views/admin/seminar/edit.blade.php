@@ -65,6 +65,18 @@
                     required>
             </div>
 
+            <!-- Tanggal seminar -->
+            <div class="mb-4">
+                <label for="tanggal_seminar" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                    Tanggal seminar
+                </label>
+                <input type="date" name="tanggal_seminar" id="tanggal_seminar"
+                    value="{{ $seminar->tanggal_seminar }}"
+                    class="block w-full mt-1 border-gray-300 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                    required>
+            </div>
+
+
             <!-- Gambar -->
             <div class="mb-4">
                 <label for="image" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
