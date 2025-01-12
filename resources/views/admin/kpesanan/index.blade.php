@@ -12,7 +12,7 @@
                     <div
                         class="bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden flex flex-col lg:flex-row items-center">
                         <!-- Image -->
-                        <div class="w-full lg:w-1/3 h-56 lg:h-auto">
+                        <div class="w-full lg:w-64 h-56 lg:h-auto">
                             <img src="{{ Storage::url($transaction->seminar->image) }}"
                                 alt="{{ $transaction->seminar->nama_seminar }}" class="w-full h-full object-cover">
                         </div>
