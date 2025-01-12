@@ -93,6 +93,7 @@ class SeminarController extends Controller
             'narasumber' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
             'jumlah_kursi' => 'required|integer|min:1',
+            'tanggal_seminar' => 'required|date',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             'kategori_id' => 'required|exists:categories,id',
         ]);
