@@ -28,8 +28,8 @@
                                     <p class="text-lg text-gray-700 dark:text-gray-300 mt-1">
                                         By: <span class="font-medium">{{ $transaction->seminar->narasumber }}</span>
                                     </p>
-                                    <p class="text-md text-gray-600 dark:text-gray-400 mt-1">
-                                        User: <span class="font-medium">{{ $transaction->user->name }}</span>
+                                    <p class="text-md text-gray-600= dark:text-gray-400 mt-1 font-bold">
+                                        User: <span class="font-medium text-white">{{ $transaction->user->name }}</span>
                                     </p>
                                     <p class="text-md text-gray-600 dark:text-gray-400 mt-1">
                                         Seats booked: <span class="font-medium">{{ $transaction->kursi }}</span>
