@@ -47,10 +47,12 @@
                                         @method('PUT')
 
                                         <button type="submit" name="status" value="berhasil"
+                                            onclick="confirm('apakah kamu yakin ingin menerima booking ini?')"
                                             class="px-4 py-2 text-sm font-semibold rounded-full bg-green-500 text-white hover:bg-green-600">
                                             Terima
                                         </button>
                                         <button type="submit" name="status" value="gagal"
+                                            onclick="confirm('apakah kamu yakin ingin menolak booking ini?')"
                                             class="px-4 py-2 text-sm font-semibold rounded-full bg-red-500 text-white hover:bg-red-600">
                                             Tolak
                                         </button>
