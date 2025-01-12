@@ -31,7 +31,7 @@
                             {{ __('Tabel Peserta') }}
                         </x-nav-link>
 
-                        <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.konfirmasi-pesanan.index')">
+                        <x-nav-link :href="route('admin.konfrimasiPesanan.index')" :active="request()->routeIs('admin.konfrimasiPesanan.index')">
                             {{ __('Konfirmasi Pesanan') }}
                         </x-nav-link>
                     @elseif(Auth::user()->role_id == 2)
