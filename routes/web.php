@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\KonfrimasiPesananController;
 use App\Http\Controllers\SeminarController;
 use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\WelcomeController;
@@ -42,6 +43,9 @@ Route::middleware(['auth'])->group(function () {
     // admin peserta
     Route::get('/admin/peserta', [PesertaController::class, 'index'])->name('admin.peserta.index');
     Route::put('/admin/peserta/{id}/update', [PesertaController::class, 'update'])->name('admin.peserta.update');
+
+    // admin konfrimasi pesanan
+    Route::get("/admin/konfirmasi-pesanan", [KonfrimasiPesananController::class, 'index'])->name("admin.konfrimasiPesanan.index");
 
 
 
