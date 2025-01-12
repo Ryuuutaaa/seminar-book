@@ -40,11 +40,11 @@ class KonfrimasiPesananController extends Controller
             DB::commit();
 
             // Redirect dengan pesan sukses
-            return redirect()->route('admin.kpesanan.index')->with('success', 'Transaction status updated successfully.');
+            return redirect()->route('admin.konfrimasiPesanan.index')->with('success', 'Transaction status updated successfully.');
         } catch (\Exception $e) {
             // Rollback jika terjadi error
             DB::rollBack();
-            return redirect()->route('admin.kpesanan.index')->with('error', 'Something went wrong. Please try again.');
+            return redirect()->route('admin.konfrimasiPesanan.index')->with('error', 'Something went wrong. Please try again.');
         }
     }
 }
