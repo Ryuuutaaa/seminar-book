@@ -11,9 +11,8 @@ class HistoryController extends Controller
 {
     public function index()
     {
-        // Mengambil data transaksi dengan relasi seminar
         $transactions = Transaction::where('user_id', auth()->id())
-            ->with('seminar') // Menggunakan relasi 'seminar'
+            ->with('seminar')
             ->get();
 
         return view('peserta.history.index', compact('transactions'));
