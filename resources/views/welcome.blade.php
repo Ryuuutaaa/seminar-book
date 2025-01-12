@@ -9,7 +9,6 @@
 </head>
 
 <body class="bg-gray-100 text-gray-800">
-    <!-- Navbar -->
     <nav class="bg-white shadow-md">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-blue-600">SeminarHub</a>
@@ -22,7 +21,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="bg-blue-500 text-white py-20">
         <div class="container mx-auto text-center">
             <h1 class="text-4xl font-bold mb-4">Selamat datang</h1>
@@ -31,7 +29,6 @@
         </div>
     </section>
 
-    <!-- Seminar Cards -->
     <section class="py-10">
         <div class="container mx-auto px-4">
             <h2 class="text-2xl font-bold mb-6 text-gray-800">Upcoming Seminars</h2>
