@@ -26,48 +26,38 @@
     <section class="bg-blue-500 text-white py-20">
         <div class="container mx-auto text-center">
             <h1 class="text-4xl font-bold mb-4">Welcome to the Ultimate Seminar Experience</h1>
-            <p class="text-lg mb-6">Discover and join seminars that inspire, educate, and connect.</p>
-            <a href="#seminars" class="bg-white text-blue-500 px-6 py-3 rounded hover:bg-gray-100">Explore Seminars</a>
+            <p class="text-lg">Explore the best seminars tailored for your needs.</p>
         </div>
     </section>
 
-    <!-- Seminar Cards Section -->
-    <section id="seminars" class="py-20">
+    <!-- Seminar Cards -->
+    <section class="py-10">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-10">Upcoming Seminars</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                @foreach ($seminars as $seminar)
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Upcoming Seminars</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                @forelse($seminars as $seminar)
                     <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <img src="{{ $seminar->image }}" alt="{{ $seminar->nama_seminar }}"
-                            class="w-full h-48 object-cover">
+                        <img src="{{ Storage::url($seminar->image) }}" alt="{{ $seminar->nama_seminar }}"
+                            class="w-full h-75">
                         <div class="p-4">
-                            <h3 class="text-xl font-bold mb-2">{{ $seminar->nama_seminar }}</h3>
-                            <p class="text-gray-600 mb-4">{{ $seminar->deskripsi }}</p>
-                            <p class="text-gray-800 font-semibold mb-2">Narasumber : {{ $seminar->narasumber }}</p>
-                            <p class="text-gray-800 font-semibold mb-4">Jumlah Kuris: {{ $seminar->jumlah_kursi }}</p>
-                            <p class="text-gray-800 font-semibold mb-4">Tanggal seminar: <span
-                                    class="font-bold">{{ $seminar->tanggal_seminar }}</span>
+                            <h3 class="text-lg font-semibold mb-2">{{ $seminar->nama_seminar }}</h3>
+                            <p class="text-sm text-gray-600 mb-2">By: {{ $seminar->narasumber }}</p>
+                            <p class="text-sm text-gray-800 mb-4">{{ $seminar->deskripsi }}</p>
+                            <p class="text-sm text-gray-600 mb-2"><strong>Date:</strong>
+                                {{ \Carbon\Carbon::parse($seminar->tanggal_seminar)->format('d M Y') }}</p>
+                            <p class="text-sm text-gray-600 mb-4"><strong>Seats:</strong> {{ $seminar->jumlah_kursi }}
                             </p>
-
-                            {{-- <a href="{{ route('seminars.show', $seminar->id) }}"
-                                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">View Details</a> --}}
+                            <a href="#"
+                                class="block bg-blue-500 text-white text-center py-2 rounded hover:bg-blue-600">Join
+                                Seminar</a>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <p class="text-gray-600">No seminars available at the moment. Please check back later!</p>
+                @endforelse
             </div>
-            @if ($seminars->isEmpty())
-                <p class="text-center text-gray-600 mt-10">No seminars available at the moment. Please check back later.
-                </p>
-            @endif
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2025 SeminarHub. All rights reserved.</p>
-        </div>
-    </footer>
 </body>
 
 </html>

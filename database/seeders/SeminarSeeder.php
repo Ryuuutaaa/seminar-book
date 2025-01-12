@@ -16,7 +16,7 @@ class SeminarSeeder extends Seeder
             'deskripsi' => 'Seminar tentang perkembangan teknologi terbaru.',
             'jumlah_kursi' => 100,
             'tanggal_seminar' => '2025-09-11',
-            'image' => 'https://unsplash.com/photos/person-diving-on-pool-splashing-water-1qCSGzVEKKQ',
+            'image' => 'seminars/s1.png',
         ]);
 
         Seminar::create([
@@ -26,7 +26,17 @@ class SeminarSeeder extends Seeder
             'deskripsi' => 'Seminar tentang pendidikan di era digital.',
             'jumlah_kursi' => 150,
             'tanggal_seminar' => '2025-09-24',
-            'image' => 'https://unsplash.com/photos/person-diving-on-pool-splashing-water-1qCSGzVEKKQ',
+            'image' => 'seminars/s2.png',
+        ]);
+
+        Seminar::create([
+            'nama_seminar' => 'Seminar masyarakat 2025',
+            'kategori_id' => 3,
+            'narasumber' => 'Erin sewith',
+            'deskripsi' => 'Globallisasi.',
+            'jumlah_kursi' => 130,
+            'tanggal_seminar' => '2022-04-24',
+            'image' => 'seminars/s3.png',
         ]);
     }
 }
