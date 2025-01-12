@@ -49,15 +49,26 @@
                     <textarea name="deskripsi" id="deskripsi" rows="4"
                         class="block w-full mt-1 border-gray-300 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
                 </div>
-
-                <div class="mt-4">
-                    <label for="jumlah_kursi" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                        Jumlah Kursi
-                    </label>
-                    <input type="number" name="jumlah_kursi" id="jumlah_kursi"
-                        class="block w-full mt-1 border-gray-300 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                        required>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="mt-4">
+                        <label for="jumlah_kursi" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                            Jumlah Kursi
+                        </label>
+                        <input type="number" name="jumlah_kursi" id="jumlah_kursi"
+                            class="block w-full mt-1 border-gray-300 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            required>
+                    </div>
+                    <div class="mt-4">
+                        <label for="tanggal_seminar" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                            Tanggal seminar
+                        </label>
+                        <input type="date" name="tanggal_seminar" id="tanggal_seminar"
+                            class="block w-full mt-1 border-gray-300 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            required>
+                    </div>
                 </div>
+
+
 
                 <div class="mt-4">
                     <label for="image" class="block text-sm font-medium text-gray-700 dark:text-gray-300">

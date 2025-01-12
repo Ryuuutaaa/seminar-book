@@ -15,6 +15,7 @@ class Seminar extends Model
         'narasumber',
         'deskripsi',
         'jumlah_kursi',
+        'tanggal_seminar',
         'image',
         'kategori_id',
     ];
