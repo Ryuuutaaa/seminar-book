@@ -17,4 +17,9 @@ class Transaction extends Model
         'kursi',
         'status',
     ];
+
+    public function seminar()
+    {
+        return $this->belongsTo(Seminar::class, 'seminar_id');
+    }
 }
