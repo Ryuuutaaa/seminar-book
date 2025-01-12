@@ -39,7 +39,7 @@
                         <x-nav-link :href="route('peserta.index')" :active="request()->routeIs('peserta.index')">
                             {{ __('Dashboard') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('peserta.index')" :active="request()->routeIs('peserta.index')">
+                        <x-nav-link :href="route('peserta.history.index')" :active="request()->routeIs('peserta.history.index')">
                             {{ __('History') }}
                         </x-nav-link>
                     @endif
