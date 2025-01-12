@@ -8,14 +8,11 @@
     <div class="py-12">
         <section>
             <div class="container mx-auto px-4">
-                <!-- Card layout with image on the left and content on the right -->
                 <div class="bg-gray-800 shadow-md rounded-lg overflow-hidden flex">
-                    <!-- Image on the left -->
                     <div class="w-1/3">
                         <img src="{{ Storage::url($seminar->image) }}" alt="{{ $seminar->nama_seminar }}"
                             class="w-full h-full object-cover">
                     </div>
-                    <!-- Seminar info on the right -->
                     <div class="w-2/3 p-6">
                         <h3 class="text-3xl font-bold text-white">{{ $seminar->nama_seminar }}</h3>
                         <h4 class="text-xl text-white mt-2">By: {{ $seminar->narasumber }}</h4>
