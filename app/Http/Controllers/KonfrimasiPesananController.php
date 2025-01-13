@@ -6,6 +6,7 @@ use App\Models\Transaction;
 use Illuminate\Http\Request;
 use App\Models\Seminar;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class KonfrimasiPesananController extends Controller
 {
@@ -41,5 +42,29 @@ class KonfrimasiPesananController extends Controller
             DB::rollBack();
             return redirect()->route('admin.konfrimasiPesanan.index')->with('error', 'Something went wrong. Please try again.');
         }
+    }
+
+    public function exportPdf()
+    {
+        $transactions = DB::table('transaction')
+            ->join('seminars', 'transaction.seminar_id', '=', 'seminars.id')
+            ->join('categories', 'seminars.kategori_id', '=', 'categories.id') // Join ke tabel categories
+            ->selectRaw('
+        seminars.nama_seminar, 
+        categories.kategori, 
+        seminars.narasumber, 
+        SUM(transaction.kursi) as total_kursi
+    ')
+            ->where('transaction.status', 'berhasil')
+            ->groupBy('transaction.seminar_id', 'seminars.nama_seminar', 'categories.kategori', 'seminars.narasumber')
+            ->get();
+
+
+
+        // Buat PDF menggunakan view
+        $pdf = Pdf::loadView('admin.kpesanan.report-pdf', compact('transactions'));
+
+        // Unduh PDF
+        return $pdf->download('laporan_transaksi.pdf');
     }
 }

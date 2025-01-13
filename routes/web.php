@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 
+
     // admin peserta
     Route::get('/admin/peserta', [PesertaController::class, 'index'])->name('admin.peserta.index');
     Route::put('/admin/peserta/{id}/update', [PesertaController::class, 'update'])->name('admin.peserta.update');
@@ -47,6 +48,7 @@ Route::middleware(['auth'])->group(function () {
     // admin konfrimasi pesanan
     Route::get("/admin/konfirmasi-pesanan", [KonfrimasiPesananController::class, 'index'])->name("admin.konfrimasiPesanan.index");
     Route::put('/admin/konfirmasi-pesanan/{id}', [KonfrimasiPesananController::class, 'update'])->name('admin.konfrimasiPesanan.update');
+    Route::get('/export-pdf', [KonfrimasiPesananController::class, 'exportPdf'])->name('transaction.export-pdf');
 
 
 
