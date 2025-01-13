@@ -26,7 +26,6 @@ class KonfrimasiPesananController extends Controller
             $transaction = Transaction::findOrFail($id);
             $seminar = Seminar::findOrFail($transaction->seminar_id);
 
-            // Update status transaksi
             $transaction->status = $request->input('status');
             $transaction->save();
 
@@ -48,7 +47,7 @@ class KonfrimasiPesananController extends Controller
     {
         $transactions = DB::table('transaction')
             ->join('seminars', 'transaction.seminar_id', '=', 'seminars.id')
-            ->join('categories', 'seminars.kategori_id', '=', 'categories.id') // Join ke tabel categories
+            ->join('categories', 'seminars.kategori_id', '=', 'categories.id')
             ->selectRaw('
         seminars.nama_seminar, 
         categories.kategori, 
@@ -61,10 +60,8 @@ class KonfrimasiPesananController extends Controller
 
 
 
-        // Buat PDF menggunakan view
         $pdf = Pdf::loadView('admin.kpesanan.report-pdf', compact('transactions'));
 
-        // Unduh PDF
         return $pdf->download('laporan_transaksi.pdf');
     }
 }
