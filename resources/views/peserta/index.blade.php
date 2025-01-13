@@ -11,9 +11,7 @@
                 <h2 class="text-2xl font-bold mb-6 text-white">Upcoming Seminars</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     @forelse($seminars as $seminar)
-                        @if ($seminar->jumlah_kursi === 0)
-                            <p class="text-3xl text-white font-bold">no data seminar</p>
-                        @else
+                        @if ($seminar->jumlah_kursi !== 0)
                             <div
                                 class="bg-gray-800 shadow-md rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:cursor-pointer">
                                 <img src="{{ Storage::url($seminar->image) }}" alt="{{ $seminar->nama_seminar }}"

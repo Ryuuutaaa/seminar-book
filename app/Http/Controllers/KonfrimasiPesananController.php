@@ -11,10 +11,11 @@ class KonfrimasiPesananController extends Controller
 {
     public function index()
     {
-        $transactions = Transaction::with(['seminar', 'user'])->get();
+        $transactions = Transaction::with(['seminar', 'user'])->orderBy('created_at', 'desc')->get();
 
         return view("admin.kpesanan.index", compact('transactions'));
     }
+
 
     public function update(Request $request, $id)
     {
