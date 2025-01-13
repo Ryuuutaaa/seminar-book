@@ -20,8 +20,18 @@ return new class extends Migration
         });
 
         Schema::table('transaction', function (Blueprint $table) {
-            $table->foreignId('user_id')->after('id')->references('id')->on('users');
-            $table->foreignId('seminar_id')->after('user_id')->references('id')->on('seminars');
+            $table->foreignId('user_id')
+                ->after('id')
+                ->references('id')
+                ->on('users')
+                ->onUpdate("cascade")
+                ->onDelete("cascade");
+            $table->foreignId('seminar_id')
+                ->after('user_id')
+                ->references('id')
+                ->on('seminars')
+                ->onUpdate("cascade")
+                ->onDelete("cascade");
         });
     }
 

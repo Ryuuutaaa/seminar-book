@@ -24,4 +24,9 @@ class Seminar extends Model
     {
         return $this->belongsTo(Category::class, 'kategori_id');
     }
+
+    public function transaction()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }
