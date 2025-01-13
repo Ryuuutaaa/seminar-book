@@ -82,7 +82,7 @@
                                 class="inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit"
+                                <button type="submit" onclick="confirm('apakah anda yakin ingin menhapusnya?')"
                                     class="text-red-600 hover:underline dark:text-red-500">Hapus</button>
                             </form>
                         </td>
