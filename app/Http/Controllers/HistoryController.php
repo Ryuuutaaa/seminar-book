@@ -41,7 +41,6 @@ class HistoryController extends Controller
             return back()->with('error', 'Jumlah kursi yang dipesan melebihi kapasitas.');
         }
 
-        $seminar->jumlah_kursi -= $jumlahKursi;
         $seminar->save();
 
         Transaction::create([
